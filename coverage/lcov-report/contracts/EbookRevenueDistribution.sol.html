@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/EbookRevenueDistribution.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> EbookRevenueDistribution.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>49/49</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">74.14% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>43/58</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>12/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>61/61</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-yes">70×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-yes">37×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">68×</span>
+<span class="cline-any cline-yes">68×</span>
+<span class="cline-any cline-yes">68×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">67×</span>
+<span class="cline-any cline-yes">67×</span>
+<span class="cline-any cline-yes">67×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">147×</span>
+<span class="cline-any cline-yes">145×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-yes">144×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">143×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">142×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">142×</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">142×</span>
+<span class="cline-any cline-yes">120×</span>
+<span class="cline-any cline-yes">120×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">142×</span>
+<span class="cline-any cline-yes">140×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">142×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">142×</span>
+<span class="cline-any cline-yes">142×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">142×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+&nbsp;
+import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
+import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+&nbsp;
+// 更新 IEbookSalesDistributor 接口，以确保 RevenueDistribution 可以调用 SalesDistributor 的相关视图函数
+interface IEbookSalesDistributor {
+    function getEbookAuthorShareBPS(uint256 _ebookId) external view returns (uint256);
+    function getEbookReferrerShareBPS(uint256 _ebookId) external view returns (uint256);
+    // 定义 defineEbookForSale 用于编译器识别，虽然不直接调用
+    function defineEbookForSale(string memory _ebookURI, uint256 _price, uint256 _authorShareBPS, uint256 _referrerShareBPS, uint256 _uploadFee) external;
+    // ✨ 恢复 getEbookAuthor 函数，用于查询具体作者地址
+    function getEbookAuthor(uint256 _ebookId) external view returns (address);
+}
+&nbsp;
+&nbsp;
+contract EbookRevenueDistribution is Initializable, OwnableUpgradeable, UUPSUpgradeable {
+    using SafeERC20 for IERC20;
+&nbsp;
+    IERC20 public salesToken; // 销售代币 (e.g., USDT/BUSD)
+    IERC20 public uploadFeeToken; // 上传费用代币 (e.g., WBNB)
+&nbsp;
+    // ✨ 核心：作者分成统一汇集到此地址，由平台链下结算
+    address public authorAddress;
+    address public platformAddress;
+    address public salesDistributor; // 被授权可以分发收益的销售分发合约地址
+&nbsp;
+    uint256 public constant PLATFORM_SHARE_BPS = 1500; // 平台分成比例，15%
+&nbsp;
+    // ✨ 新增：个人收益累积映射
+    mapping(address =&gt; uint256) public authorEarnings; // 作者个人收益累积
+    mapping(address =&gt; uint256) public distributorEarnings; // 分销者个人收益累积
+&nbsp;
+    // 事件定义
+    event RevenueDistributed(uint256 indexed ebookId, uint256 totalAmount, address indexed authorRecipient, address platformRecipient, address indexed referrer, uint256 authorAmount, uint256 platformAmount, uint256 referrerAmount);
+    event AuthorAddressSet(address indexed oldAddress, address indexed newAddress);
+    event PlatformAddressSet(address indexed oldAddress, address indexed newAddress);
+    event SalesDistributorSet(address indexed oldAddress, address indexed newAddress);
+    event UploadFeeReceived(address indexed from, address indexed tokenAddress, uint256 amount);
+    // ✨ 新增：提现相关事件
+    event AuthorEarningsWithdrawn(address indexed author, uint256 amount);
+    event DistributorEarningsWithdrawn(address indexed distributor, uint256 amount);
+&nbsp;
+    // 自定义错误
+    error AuthorAddressCannotBeZero();
+    error PlatformAddressCannotBeZero();
+    error SalesDistributorCannotBeZeroAddress();
+    error OnlySalesDistributorCanDistributeRevenue();
+    error AuthorAddressNotSet();
+    error PlatformAddressNotSet();
+    error OnlySalesDistributorCanSendUploadFees();
+    error UploadFeeMustBeGreaterThanZero();
+    error TotalDistributedExceedsTotalRevenue(); // 更具体的错误名
+    // ✨ 新增：提现相关错误
+    error NoEarningsToWithdraw();
+    error WithdrawFailed();
+&nbsp;
+    /// @custom:oz-upgrades-unsafe-allow constructor
+    constructor() {}
+&nbsp;
+    function initialize(address initialOwner, address _salesTokenAddress, address _uploadFeeTokenAddress) public <span class="missing-if-branch" title="else path not taken" >E</span>initializer {
+        __Ownable_init(initialOwner);
+        __UUPSUpgradeable_init();
+        // 销售代币和上传费用代币在初始化时设置，且为 immutable
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_salesTokenAddress != address(0), "Zero sales token address");
+        salesToken = IERC20(_salesTokenAddress);
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_uploadFeeTokenAddress != address(0), "Zero upload fee token address");
+        uploadFeeToken = IERC20(_uploadFeeTokenAddress);
+    }
+&nbsp;
+    function _authorizeUpgrade(address newImplementation) internal override <span class="missing-if-branch" title="else path not taken" >E</span>onlyOwner {}
+&nbsp;
+    /**
+     * @dev ✨ 已弃用：设置作者分成统一收款地址。
+     * 现在使用每个电子书的具体作者地址，此函数保留仅为向后兼容性。
+     * 只有合约所有者可以调用。
+     * @param _newAuthorAddress 新的作者收款地址。
+     */
+    function setAuthorAddress(address _newAuthorAddress) public <span class="missing-if-branch" title="else path not taken" >E</span>onlyOwner {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (_newAuthorAddress == address(0)) revert AuthorAddressCannotBeZero();
+        emit AuthorAddressSet(authorAddress, _newAuthorAddress);
+        authorAddress = _newAuthorAddress;
+    }
+&nbsp;
+    /**
+     * @dev 设置平台分成收款地址。
+     * 只有合约所有者可以调用。
+     * @param _newPlatformAddress 新的平台收款地址。
+     */
+    function setPlatformAddress(address _newPlatformAddress) public onlyOwner {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (_newPlatformAddress == address(0)) revert PlatformAddressCannotBeZero();
+        emit PlatformAddressSet(platformAddress, _newPlatformAddress);
+        platformAddress = _newPlatformAddress;
+    }
+&nbsp;
+    /**
+     * @dev 设置被授权的销售分发合约地址。
+     * 只有合约所有者可以调用。
+     * @param _salesDistributor 新的销售分发合约地址。
+     */
+    function setSalesDistributor(address _salesDistributor) public <span class="missing-if-branch" title="else path not taken" >E</span>onlyOwner {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (_salesDistributor == address(0)) revert SalesDistributorCannotBeZeroAddress();
+        emit SalesDistributorSet(salesDistributor, _salesDistributor);
+        salesDistributor = _salesDistributor;
+    }
+&nbsp;
+    /**
+     * @dev 分发电子书销售收入。
+     * 只有授权的销售分发合约可以调用。
+     * @param amount 总销售金额。
+     * @param ebookId 电子书ID。
+     * @param referrer 推荐人地址 (如果是 address(0) 则表示无推荐人)。
+     */
+    function distributeRevenue(uint256 amount, uint256 ebookId, address referrer) external {
+        // 只有销售分发合约可以调用此函数
+        if (msg.sender != salesDistributor) revert OnlySalesDistributorCanDistributeRevenue();
+        if (platformAddress == address(0)) revert PlatformAddressNotSet();
+&nbsp;
+        // 通过 IEbookSalesDistributor 接口从 SalesDistributor 合约查询特定电子书的作者地址和分成比例
+        IEbookSalesDistributor salesDistributorContract = IEbookSalesDistributor(salesDistributor);
+        
+        // ✨ 查询具体的作者地址
+        address ebookAuthor = salesDistributorContract.getEbookAuthor(ebookId);
+        if (ebookAuthor == address(0)) revert AuthorAddressNotSet();
+&nbsp;
+        uint256 authorShareBPS = salesDistributorContract.getEbookAuthorShareBPS(ebookId);
+        uint256 referrerShareBPS = salesDistributorContract.getEbookReferrerShareBPS(ebookId);
+&nbsp;
+        // 计算各个角色的收益 (使用 salesToken)
+        uint256 authorAmount = (amount * authorShareBPS) / 10000;
+        uint256 referrerAmount = (amount * referrerShareBPS) / 10000;
+        uint256 platformFixedAmount = (amount * PLATFORM_SHARE_BPS) / 10000;
+&nbsp;
+        // Calculate total allocated amount before considering remainder
+        uint256 totalAllocated = authorAmount + referrerAmount + platformFixedAmount;
+&nbsp;
+        // Ensure total allocated does not exceed the total amount
+        // This implicitly handles cases where BPS sum &gt; 10000
+        if (totalAllocated &gt; amount) revert TotalDistributedExceedsTotalRevenue();
+&nbsp;
+        uint256 platformAmount = platformFixedAmount;
+&nbsp;
+        // If there's a remainder, add it to the platform's share
+        if (totalAllocated &lt; amount) {
+            platformAmount += (amount - totalAllocated);
+        }
+&nbsp;
+        // 如果没有推荐人，将推荐人分成归入平台收益
+        if (referrer == address(0)) {
+            platformAmount += referrerAmount;
+            referrerAmount = 0; // 确保不再尝试转给零地址
+        }
+&nbsp;
+        // 累积作者和推荐人收益，直接转账给平台
+        if (authorAmount &gt; 0) {
+            authorEarnings[ebookAuthor] += authorAmount; // 累积作者收益
+        }
+        if (referrerAmount &gt; 0) {
+            distributorEarnings[referrer] += referrerAmount; // 累积推荐人收益
+        }
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (platformAmount &gt; 0) {
+            salesToken.safeTransfer(platformAddress, platformAmount); // 直接转给平台
+        }
+&nbsp;
+        emit RevenueDistributed(ebookId, amount, ebookAuthor, platformAddress, referrer, authorAmount, platformAmount, referrerAmount);
+    }
+&nbsp;
+    /**
+     * @dev 接收来自 SalesDistributor 的电子书上传费用。
+     * @param _tokenAddress 实际转入的 ERC20 代币地址 (e.g., WBNB 地址)。
+     * @param amount 接收的费用金额。
+     * 只有 SalesDistributor 合约可以调用此函数。
+     */
+    function receiveUploadFee(address _tokenAddress, uint256 amount) external {
+        if (msg.sender != salesDistributor) revert OnlySalesDistributorCanSendUploadFees();
+        if (platformAddress == address(0)) revert PlatformAddressNotSet();
+        if (amount == 0) revert UploadFeeMustBeGreaterThanZero();
+&nbsp;
+        // 从调用者转账代币到合约，然后转给平台地址
+        IERC20(_tokenAddress).safeTransferFrom(msg.sender, address(this), amount);
+        IERC20(_tokenAddress).safeTransfer(platformAddress, amount);
+        emit UploadFeeReceived(salesDistributor, _tokenAddress, amount);
+    }
+&nbsp;
+    /**
+     * @dev ✨ 新增：作者提现收益
+     * 只有作者地址可以调用
+     */
+    function withdrawAuthorEarnings() external {
+        uint256 earnings = authorEarnings[msg.sender];
+        if (earnings == 0) revert NoEarningsToWithdraw();
+        
+        authorEarnings[msg.sender] = 0; // 先清零，防止重入攻击
+        
+        bool success = salesToken.transfer(msg.sender, earnings);
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!success) revert WithdrawFailed();
+        
+        emit AuthorEarningsWithdrawn(msg.sender, earnings);
+    }
+    
+    /**
+     * @dev ✨ 新增：分销者提现收益
+     * 只有分销者可以调用
+     */
+    function withdrawDistributorEarnings() external {
+        uint256 earnings = distributorEarnings[msg.sender];
+        if (earnings == 0) revert NoEarningsToWithdraw();
+        
+        distributorEarnings[msg.sender] = 0; // 先清零，防止重入攻击
+        
+        bool success = salesToken.transfer(msg.sender, earnings);
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!success) revert WithdrawFailed();
+        
+        emit DistributorEarningsWithdrawn(msg.sender, earnings);
+    }
+&nbsp;
+    /**
+     * @dev 允许合约所有者提取本合约中任意 ERC20 代币。
+     * 主要用于管理和紧急情况。
+     * @param _tokenAddress 要提取的 ERC20 代币地址。
+     * @param _to 接收代币的地址。
+     * @param _amount 提取的金额。
+     */
+    function withdrawAnyERC20Token(address _tokenAddress, address _to, uint256 _amount) public <span class="missing-if-branch" title="else path not taken" >E</span>onlyOwner {
+        IERC20(_tokenAddress).safeTransfer(_to, _amount);
+    }
+&nbsp;
+    /**
+     * @dev 允许合约所有者提取本合约中累积的原生代币（BNB）。
+     * 主要用于管理和紧急情况。
+     * @param _to 接收原生代币的地址。
+     * @param _amount 提取的金额。
+     */
+    function withdrawNativeToken(address payable _to, uint256 _amount) public <span class="missing-if-branch" title="else path not taken" >E</span>onlyOwner {
+        (bool success, ) = _to.call{value: _amount}("");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(success, "Transfer failed.");
+    }
+&nbsp;
+    receive() external payable {} // 允许接收原生代币
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jun 14 2025 21:24:25 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

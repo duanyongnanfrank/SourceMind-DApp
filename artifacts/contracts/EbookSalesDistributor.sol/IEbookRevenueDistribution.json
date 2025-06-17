@@ -1,0 +1,134 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IEbookRevenueDistribution",
+  "sourceName": "contracts/EbookSalesDistributor.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "AuthorAddressCannotBeZero",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "AuthorAddressNotSet",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "OnlySalesDistributorCanSendUploadFees",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PlatformAddressCannotBeZero",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PlatformAddressNotSet",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "UploadFeeMustBeGreaterThanZero",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "ebookId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "referrer",
+          "type": "address"
+        }
+      ],
+      "name": "distributeRevenue",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "platformAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_tokenAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "receiveUploadFee",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newAuthorAddress",
+          "type": "address"
+        }
+      ],
+      "name": "setAuthorAddress",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newPlatformAddress",
+          "type": "address"
+        }
+      ],
+      "name": "setPlatformAddress",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_salesDistributor",
+          "type": "address"
+        }
+      ],
+      "name": "setSalesDistributor",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

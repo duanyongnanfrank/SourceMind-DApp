@@ -1,0 +1,62 @@
+/* MintButton组件样式 */
+.mint-section {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.mint-section h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.mint-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.file-upload, .metadata-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.file-upload label, .metadata-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-weight: 500;
+}
+
+input[type="file"], input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.upload-progress {
+  margin: 10px 0;
+}
+
+.upload-progress progress {
+  width: 100%;
+  height: 20px;
+}
+
+.mint-button {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.mint-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}

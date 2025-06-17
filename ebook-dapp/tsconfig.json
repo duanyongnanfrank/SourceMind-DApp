@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // 编译目标 JavaScript 版本，例如 ES2020, ES2021, ESNext
+    "useDefineForClassFields": true, // 在类字段上使用 defineProperty 语义 (Vite 推荐)
+    "lib": ["DOM", "DOM.Iterable", "ESNext"], // 包含 DOM 和 ES 最新特性相关的类型定义
+    "allowJs": false, // 不允许编译 JavaScript 文件，只处理 TypeScript (如果您有混合JS和TS文件，可以改为 true)
+    "skipLibCheck": true, // 跳过所有声明文件 (*.d.ts) 的类型检查，加快编译速度
+    "esModuleInterop": true, // 允许 CommonJS/AMD/UMD 模块的默认导入 (例如 import React from 'react')
+    "allowSyntheticDefaultImports": true, // 允许合成默认导入 (通常与 esModuleInterop 配合使用)
+    "strict": true, // 启用所有严格的类型检查选项 (推荐，有助于编写更健壮的代码)
+    "forceConsistentCasingInFileNames": true, // 强制引用文件时大小写一致
+    "module": "ESNext", // 指定模块代码生成的方式 (如 ESNext, CommonJS)。Vite 通常推荐 ESNext
+    "moduleResolution": "bundler", // 或 "node"。对于 Vite 等打包工具，"bundler" 模式更优化
+    "resolveJsonModule": true, // 允许导入 .json 文件
+    "isolatedModules": true, // 确保每个文件可以独立编译 (Vite 需要此项)
+    "noEmit": true, // 不生成编译后的 JavaScript 文件 (由 Vite 处理文件生成)
+    "jsx": "react-jsx", // <-- **核心修正**：告诉 TypeScript 编译器如何处理 JSX
+    "baseUrl": ".", // 基础 URL，用于解析非相对模块名 (已存在)
+    "paths": { // 路径别名 (已存在)
+      "@/*": ["src/*"]
+    },
+    "types": ["vite/client"] // Vite 客户端类型 (已存在)
+  },
+  "include": ["src"], // <-- **重要**：指定哪些目录下的文件需要 TypeScript 编译
+  "references": [{ "path": "./tsconfig.node.json" }] // 如果您有 tsconfig.node.json 文件，则添加此项
+}

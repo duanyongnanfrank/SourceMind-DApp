@@ -1,0 +1,1076 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/EbookSalesDistributor.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> EbookSalesDistributor.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.43% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>54/56</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">93.33% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>56/60</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">88.24% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>15/17</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">97.59% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>81/83</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">103×</span>
+<span class="cline-any cline-yes">102×</span>
+<span class="cline-any cline-yes">101×</span>
+<span class="cline-any cline-yes">100×</span>
+<span class="cline-any cline-yes">99×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-yes">98×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">115×</span>
+<span class="cline-any cline-yes">115×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">113×</span>
+<span class="cline-any cline-yes">112×</span>
+<span class="cline-any cline-yes">111×</span>
+<span class="cline-any cline-yes">111×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">110×</span>
+<span class="cline-any cline-yes">110×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">109×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">107×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-yes">13×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">140×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">137×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">167×</span>
+<span class="cline-any cline-yes">167×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">167×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">167×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">164×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">164×</span>
+<span class="cline-any cline-yes">44×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">11×</span>
+<span class="cline-any cline-yes">5×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">33×</span>
+<span class="cline-any cline-yes">24×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">135×</span>
+<span class="cline-any cline-yes">135×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">135×</span>
+<span class="cline-any cline-yes">134×</span>
+<span class="cline-any cline-yes">134×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">114×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">136×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+&nbsp;
+// 导入标准 (非 upgradeable) 版本的 Ownable 和 SafeERC20
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+&nbsp;
+interface IEbookNFT {
+    function mintEbook(address _recipient, string memory _uri, uint256 _ebookId) external;
+    function ownerOf(uint256 tokenId) external view returns (address);
+    function setMinter(address newMinter) external;
+    function minter() external view returns (address);
+    function tokenURI(uint256 tokenId) external view returns (string memory);
+    function totalSupply() external view returns (uint256);
+    function hasEbookNFT(address _owner, uint256 _tokenId) external view returns (bool);
+    function hasEbookNFTByEbookId(address _owner, uint256 _ebookId) external view returns (bool);
+}
+&nbsp;
+// ✨ 更新 IEbookRevenueDistribution 接口以匹配新的 ERD 合约 (移除作者地址相关函数，新增提现事件)
+interface IEbookRevenueDistribution {
+    function distributeRevenue(uint256 amount, uint256 ebookId, address referrer) external;
+    function setPlatformAddress(address _newPlatformAddress) external;
+    function setSalesDistributor(address _salesDistributor) external;
+    function receiveUploadFee(address _tokenAddress, uint256 amount) external;
+    function setAuthorAddress(address _newAuthorAddress) external; // 补全缺失的函数
+    function platformAddress() external view returns (address); // 添加getter函数
+    // 继承的错误 (根据 ERD 实际定义)
+    error OnlySalesDistributorCanSendUploadFees();
+    error UploadFeeMustBeGreaterThanZero();
+    error AuthorAddressNotSet(); // 再次确认：ERD 仍有这个错误
+    error PlatformAddressNotSet(); // 再次确认：ERD 仍有这个错误
+    error PlatformAddressCannotBeZero(); // 匹配 EbookRevenueDistribution.sol 中的错误名称
+    error AuthorAddressCannotBeZero(); // 匹配 EbookRevenueDistribution.sol 中的错误名称
+}
+&nbsp;
+contract EbookSalesDistributor is Ownable {
+    using SafeERC20 for IERC20;
+&nbsp;
+    // 自定义错误定义
+    error ZeroSalesTokenAddress();
+    error ZeroUploadFeeTokenAddress();
+    error ZeroEbookNFTContractAddress();
+    error ZeroRevenueDistributionContractAddress();
+    error ZeroUploadFeeAmount();
+    error EbookPriceMustBeGreaterThanZero();
+    error EmptyEbookURI();
+    error EbookNFTContractNotSet();
+    error RevenueDistributionContractNotSet();
+    error InsufficientUploadFee();
+    error NotEbookNFTOwner();
+    error TotalShareBPSExceeds100Percent();
+    error InvalidExclusiveReferrer();
+    error NonExclusiveReferrerMustOwnNFT();
+    error PlatformAddressNotSet();
+&nbsp;
+    error EbookNotAvailableForPurchase();
+&nbsp;
+&nbsp;
+&nbsp;
+    IERC20 public immutable salesToken;
+    IERC20 public immutable uploadFeeToken;
+&nbsp;
+    IEbookNFT public ebookNFTContract;
+    IEbookRevenueDistribution public revenueDistributionContract;
+&nbsp;
+    // ✨ 核心：保留这些平台代收地址，因为它们是 ERD 的作者和平台收款地址
+&nbsp;
+&nbsp;
+    // ✨ 恢复 ebookAuthors 映射，用于记录每个电子书的具体作者地址
+    mapping(uint256 =&gt; address) public ebookAuthors;
+&nbsp;
+    mapping(uint256 =&gt; uint256) public ebookPrices;
+    mapping(uint256 =&gt; string) public definedEbookTokenURIs;
+&nbsp;
+    mapping(uint256 =&gt; uint256) public ebookAuthorShareBPS;
+    mapping(uint256 =&gt; uint256) public ebookReferrerShareBPS;
+    
+    // ✨ 新增：记录电子书创作者地址
+    mapping(uint256 =&gt; address) public ebookCreators;
+&nbsp;
+    uint256 private _nextDefinedEbookId;
+&nbsp;
+    uint256 public immutable UPLOAD_FEE;
+&nbsp;
+    event EbookPurchased(uint256 indexed ebookId, address indexed buyer, address indexed referrer, uint256 price);
+    event EbookNFTContractSet(address indexed newEbookNFTContract);
+    event RevenueDistributionContractSet(address indexed newRevenueDistributionContract);
+    // ✨ 保留这些事件，它们仍有意义，即使状态变量被移除 (但这与您的ERD保持一致，ERD仍有authorAddress和platformAddress)
+&nbsp;
+    event EbookDefined(uint256 indexed ebookId, address indexed definer, string uri, uint256 price, uint256 authorBPS, uint256 referrerBPS, uint256 uploadFee);
+    event ExclusiveReferralLinkSet(uint256 indexed ebookId, address indexed referrer, bool isExclusive);
+    event UploadFeeReceived(address indexed from, address indexed tokenAddress, uint256 amount);
+&nbsp;
+    mapping(uint256 =&gt; address) public exclusiveReferrers;
+&nbsp;
+    constructor(
+        address initialOwner,
+        address _salesTokenAddress,
+        address _uploadFeeTokenAddress,
+        address _ebookNFTContractAddress,
+        address _revenueDistributionContractAddress,
+        uint256 _uploadFeeAmount
+    ) Ownable(initialOwner) {
+        if (_salesTokenAddress == address(0)) revert ZeroSalesTokenAddress();
+        if (_uploadFeeTokenAddress == address(0)) revert ZeroUploadFeeTokenAddress();
+        if (_ebookNFTContractAddress == address(0)) revert ZeroEbookNFTContractAddress();
+        if (_revenueDistributionContractAddress == address(0)) revert ZeroRevenueDistributionContractAddress();
+        if (_uploadFeeAmount == 0) revert ZeroUploadFeeAmount();
+&nbsp;
+        salesToken = IERC20(_salesTokenAddress);
+        uploadFeeToken = IERC20(_uploadFeeTokenAddress);
+        ebookNFTContract = IEbookNFT(_ebookNFTContractAddress);
+        revenueDistributionContract = IEbookRevenueDistribution(_revenueDistributionContractAddress);
+        UPLOAD_FEE = _uploadFeeAmount;
+        _nextDefinedEbookId = 1;
+    }
+&nbsp;
+    receive() external payable {}
+&nbsp;
+    function setEbookNFTContract(address _ebookNFTContract) public onlyOwner {
+        if (_ebookNFTContract == address(0)) revert ZeroEbookNFTContractAddress();
+        if (address(ebookNFTContract) == _ebookNFTContract) return; // Gas 优化
+        ebookNFTContract = IEbookNFT(_ebookNFTContract);
+        emit EbookNFTContractSet(_ebookNFTContract);
+    }
+&nbsp;
+    function setRevenueDistributionContract(address _revenueDistributionContract) public onlyOwner {
+        if (_revenueDistributionContract == address(0)) revert ZeroRevenueDistributionContractAddress();
+        if (address(revenueDistributionContract) == _revenueDistributionContract) return; // Gas 优化
+        revenueDistributionContract = IEbookRevenueDistribution(_revenueDistributionContract);
+        emit RevenueDistributionContractSet(_revenueDistributionContract);
+    }
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+    /**
+     * @dev 定义电子书模板用于销售，不铸造NFT
+     * @param _ebookURI 电子书的IPFS URI
+     * @param _price 电子书价格
+     * @param _authorShareBPS 作者分成比例（基点）
+     * @param _referrerShareBPS 推荐人分成比例（基点）
+     * @param _uploadFee 上传费用
+     * @return newEbookId 新创建的电子书ID
+     */
+    function defineEbookForSale(
+        string memory _ebookURI,
+        uint256 _price,
+        uint256 _authorShareBPS,
+        uint256 _referrerShareBPS,
+        uint256 _uploadFee
+    ) public returns (uint256 newEbookId) {
+        // 确保分成比例总和不超过 10000 (100%)
+        // 假设平台固定分成比例为 1500 BPS (15%)
+        uint256 totalBPS = _authorShareBPS + _referrerShareBPS + 1500; 
+        if (totalBPS &gt; 10000) revert TotalShareBPSExceeds100Percent();
+&nbsp;
+        if (_price == 0) revert EbookPriceMustBeGreaterThanZero();
+        if (bytes(_ebookURI).length == 0) revert EmptyEbookURI();
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (address(revenueDistributionContract) == address(0)) revert RevenueDistributionContractNotSet();
+        if (_uploadFee &lt; UPLOAD_FEE) revert InsufficientUploadFee();
+&nbsp;
+        // 直接将上传费用从用户转移到平台地址，简化流程
+        address platformAddress = revenueDistributionContract.platformAddress();
+        if (platformAddress == address(0)) revert PlatformAddressNotSet();
+        
+        uploadFeeToken.safeTransferFrom(msg.sender, platformAddress, _uploadFee);
+        
+        // 发出上传费用接收事件
+        emit UploadFeeReceived(msg.sender, address(uploadFeeToken), _uploadFee);
+&nbsp;
+        newEbookId = _nextDefinedEbookId;
+        _nextDefinedEbookId++;
+&nbsp;
+        // 存储电子书模板信息
+        ebookPrices[newEbookId] = _price;
+        definedEbookTokenURIs[newEbookId] = _ebookURI;
+        ebookAuthorShareBPS[newEbookId] = _authorShareBPS;
+        ebookReferrerShareBPS[newEbookId] = _referrerShareBPS;
+        
+        // 记录创作者地址（用于权限验证）
+        ebookCreators[newEbookId] = msg.sender;
+        
+        // ✨ 记录作者地址用于收益分配
+        ebookAuthors[newEbookId] = msg.sender;
+&nbsp;
+        // ✨ 关键修改：不再铸造NFT，只定义电子书模板
+        // ebookNFTContract.mintEbook(msg.sender, definedEbookTokenURIs[newEbookId], newEbookId);
+&nbsp;
+        emit EbookDefined(newEbookId, msg.sender, _ebookURI, _price, _authorShareBPS, _referrerShareBPS, _uploadFee);
+    }
+&nbsp;
+    /**
+     * @dev 设置专属推荐链接 - 只有电子书创作者或NFT拥有者可以设置
+     * @param _ebookId 电子书ID
+     */
+    function setExclusiveReferralLink(uint256 _ebookId) public {
+        // 验证调用者是电子书创作者或拥有该电子书的NFT
+        bool isCreator = ebookCreators[_ebookId] == msg.sender;
+        bool isNFTOwner = address(ebookNFTContract) != address(0) &amp;&amp; 
+                         ebookNFTContract.hasEbookNFTByEbookId(msg.sender, _ebookId);
+        
+        if (!isCreator &amp;&amp; !isNFTOwner) revert NotEbookNFTOwner();
+&nbsp;
+        // 设置专属推荐人
+        exclusiveReferrers[_ebookId] = msg.sender;
+        emit ExclusiveReferralLinkSet(_ebookId, msg.sender, true);
+    }
+&nbsp;
+    function getEbookPrice(uint256 _ebookId) public view returns (uint256) {
+        return ebookPrices[_ebookId];
+    }
+&nbsp;
+    function getEbookURI(uint256 _ebookId) public view returns (string memory) {
+        return definedEbookTokenURIs[_ebookId];
+    }
+&nbsp;
+    function getEbookAuthorShareBPS(uint256 _ebookId) public view returns (uint256) {
+        return ebookAuthorShareBPS[_ebookId];
+    }
+&nbsp;
+    function getEbookReferrerShareBPS(uint256 _ebookId) public view returns (uint256) {
+        return ebookReferrerShareBPS[_ebookId];
+    }
+&nbsp;
+    /**
+     * @dev 获取电子书创作者地址
+     * @param _ebookId 电子书ID
+     * @return 创作者地址
+     */
+    function getEbookCreator(uint256 _ebookId) public view returns (address) {
+        return ebookCreators[_ebookId];
+    }
+&nbsp;
+    /**
+     * @dev 获取下一个电子书ID（即当前已定义的电子书总数）
+     * @return 下一个可用的电子书ID
+     */
+<span class="fstat-no" title="function not covered" >    function getNextEbookId() public view returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        return _nextDefinedEbookId;</span>
+    }
+&nbsp;
+    /**
+     * @dev 获取所有可售电子书的信息
+     * @return ebookIds 电子书ID数组
+     * @return uris URI数组
+     * @return prices 价格数组
+     * @return creators 创作者地址数组
+     */
+    function getAllAvailableEbooks() public view returns (
+        uint256[] memory ebookIds,
+        string[] memory uris,
+        uint256[] memory prices,
+        address[] memory creators
+    ) {
+        uint256 totalEbooks = _nextDefinedEbookId - 1;
+        ebookIds = new uint256[](totalEbooks);
+        uris = new string[](totalEbooks);
+        prices = new uint256[](totalEbooks);
+        creators = new address[](totalEbooks);
+&nbsp;
+        for (uint256 i = 1; i &lt;= totalEbooks; i++) {
+            ebookIds[i-1] = i;
+            uris[i-1] = definedEbookTokenURIs[i];
+            prices[i-1] = ebookPrices[i];
+            creators[i-1] = ebookCreators[i];
+        }
+    }
+&nbsp;
+    /**
+     * @dev 检查电子书是否可购买
+     * @param _ebookId 电子书ID
+     * @return 是否可购买
+     */
+<span class="fstat-no" title="function not covered" >    function isEbookAvailableForPurchase(uint256 _ebookId) public view returns (bool) {</span>
+<span class="cstat-no" title="statement not covered" >        return _ebookId &gt; 0 &amp;&amp; </span>
+               _ebookId &lt; _nextDefinedEbookId &amp;&amp; 
+               ebookPrices[_ebookId] &gt; 0 &amp;&amp; 
+               bytes(definedEbookTokenURIs[_ebookId]).length &gt; 0;
+    }
+&nbsp;
+    function purchaseEbook(uint256 _ebookId, address _referrer, bool _isExclusivePurchase) public {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (address(ebookNFTContract) == address(0)) revert EbookNFTContractNotSet();
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (address(revenueDistributionContract) == address(0)) revert RevenueDistributionContractNotSet();
+&nbsp;
+        uint256 currentEbookPrice = ebookPrices[_ebookId];
+        // 简化合并冗余检查，只保留更通用和全面的错误信息
+        if (currentEbookPrice == 0 || <span class="branch-1 cbranch-no" title="branch not covered" >bytes(definedEbookTokenURIs[_ebookId]).length == 0</span>) revert EbookNotAvailableForPurchase();
+        // if (bytes(definedEbookTokenURIs[_ebookId]).length == 0) revert EbookURINotDefined(); // 冗余，已合并
+&nbsp;
+        address actualReferrer = address(0);
+&nbsp;
+        if (_referrer != address(0)) {
+            if (_isExclusivePurchase) {
+                // 独占购买：推荐人必须是设置的专属推荐人，且必须拥有NFT
+                if (exclusiveReferrers[_ebookId] != _referrer || !ebookNFTContract.hasEbookNFTByEbookId(_referrer, _ebookId)) {
+                    revert InvalidExclusiveReferrer();
+                }
+                actualReferrer = _referrer;
+            } else {
+                // 非独占购买：推荐人必须拥有该电子书的 NFT
+                if (!ebookNFTContract.hasEbookNFTByEbookId(_referrer, _ebookId)) {
+                    revert NonExclusiveReferrerMustOwnNFT();
+                }
+                actualReferrer = _referrer;
+            }
+        }
+&nbsp;
+        salesToken.safeTransferFrom(msg.sender, address(this), currentEbookPrice);
+        salesToken.safeTransfer(address(revenueDistributionContract), currentEbookPrice);
+        // ✨ 调用 distributeRevenue，无需传入 ebookAuthor
+        revenueDistributionContract.distributeRevenue(currentEbookPrice, _ebookId, actualReferrer);
+        string memory uriToMint = definedEbookTokenURIs[_ebookId];
+        ebookNFTContract.mintEbook(msg.sender, uriToMint, _ebookId);
+&nbsp;
+        emit EbookPurchased(_ebookId, msg.sender, _referrer, currentEbookPrice);
+    }
+&nbsp;
+    function withdrawAnyERC20Token(address _tokenAddress, address _to, uint256 _amount) public onlyOwner {
+        IERC20(_tokenAddress).safeTransfer(_to, _amount);
+    }
+&nbsp;
+    function withdrawNativeToken(address payable _to, uint256 _amount) public onlyOwner {
+        (bool success, ) = _to.call{value: _amount}("");
+        require(success, "Transfer failed.");
+    }
+&nbsp;
+    /**
+     * @dev 获取电子书的作者地址
+     * @param _ebookId 电子书ID
+     * @return 作者地址
+     */
+    function getEbookAuthor(uint256 _ebookId) public view returns (address) {
+        return ebookAuthors[_ebookId];
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jun 14 2025 21:24:25 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

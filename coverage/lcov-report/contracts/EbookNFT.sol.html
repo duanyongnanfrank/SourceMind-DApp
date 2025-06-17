@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/EbookNFT.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> EbookNFT.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.15% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>25/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>16/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">91.67% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>11/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">96.88% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>31/32</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">101×</span>
+<span class="cline-any cline-yes">101×</span>
+<span class="cline-any cline-yes">101×</span>
+<span class="cline-any cline-yes">101×</span>
+<span class="cline-any cline-yes">101×</span>
+<span class="cline-any cline-yes">101×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">52×</span>
+<span class="cline-any cline-yes">51×</span>
+<span class="cline-any cline-yes">51×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">194×</span>
+<span class="cline-any cline-yes">193×</span>
+<span class="cline-any cline-yes">193×</span>
+<span class="cline-any cline-yes">192×</span>
+<span class="cline-any cline-yes">192×</span>
+<span class="cline-any cline-yes">187×</span>
+<span class="cline-any cline-yes">182×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">30×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">34×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">85×</span>
+<span class="cline-any cline-yes">85×</span>
+<span class="cline-any cline-yes">50×</span>
+<span class="cline-any cline-yes">50×</span>
+<span class="cline-any cline-yes">40×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">202×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+&nbsp;
+import "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/token/ERC721/extensions/ERC721EnumerableUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
+import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
+&nbsp;
+contract EbookNFT is Initializable, ERC721Upgradeable, ERC721EnumerableUpgradeable, OwnableUpgradeable, UUPSUpgradeable {
+    uint256 private _nextTokenId; // 用于追踪下一个可用的 NFT Token ID
+    mapping(uint256 =&gt; string) private _tokenURIs; // 存储每个 Token ID 对应的元数据 URI
+    mapping(uint256 =&gt; uint256) private _tokenToEbookId; // 存储 NFT Token ID 到电子书 ID 的映射
+    address public minter; // 被授权可以铸造新 NFT 的地址
+&nbsp;
+    event EbookMinted(uint256 indexed tokenId, address indexed recipient, string uri); // 电子书铸造事件
+    event MinterSet(address indexed oldMinter, address indexed newMinter); // 铸币者设置事件
+&nbsp;
+    // 自定义错误
+    error NewMinterCannotBeZeroAddress();
+    error OnlyMinterCanMint();
+    error URIQueryForNonexistentToken();
+&nbsp;
+    /// @custom:oz-upgrades-unsafe-allow constructor
+    // 构造函数，用于在部署时禁用 OpenZeppelin Upgrades 的初始化警告，并防止重复初始化
+    constructor() {
+        _disableInitializers();
+    }
+&nbsp;
+    /**
+     * @dev 合约的初始化函数，在部署代理合约后只被调用一次
+     * @param initialOwner 合约的初始所有者地址
+     */
+    function initialize(address initialOwner) public initializer {
+        __ERC721_init("EbookNFT", "EBNFT"); // 初始化 ERC721 基类
+        __Ownable_init(initialOwner); // 初始化 Ownable 基类，设置合约所有者
+        __ERC721Enumerable_init(); // 初始化 ERC721Enumerable 基类（在 ERC721 之后）
+        __UUPSUpgradeable_init(); // 初始化 UUPSUpgradeable 基类
+        _nextTokenId = 1; // 设置第一个 Token ID 从 1 开始
+        minter = initialOwner; // 初始铸币者设置为合约所有者
+    }
+&nbsp;
+    /**
+     * @dev 设置新的铸币者地址
+     * 只有合约所有者可以调用
+     * @param _newMinter 新的铸币者地址
+     */
+    function setMinter(address _newMinter) public onlyOwner {
+        if (_newMinter == address(0)) revert NewMinterCannotBeZeroAddress();
+        emit MinterSet(minter, _newMinter); // 触发铸币者设置事件
+        minter = _newMinter; // 更新铸币者地址
+    }
+&nbsp;
+    /**
+     * @dev 铸造一个新的电子书 NFT
+     * 只有被授权的铸币者 (minter) 才能调用
+     * @param _recipient 接收 NFT 的地址
+     * @param _uri 电子书的元数据 URI
+     * @param _ebookId 电子书 ID
+     */
+    function mintEbook(address _recipient, string memory _uri, uint256 _ebookId) external {
+        if (msg.sender != minter) revert OnlyMinterCanMint();
+        uint256 tokenId = _nextTokenId; // 获取当前 Token ID
+        _safeMint(_recipient, tokenId); // 安全地铸造 NFT 给接收者
+        _tokenURIs[tokenId] = _uri; // 设置 NFT 的元数据 URI
+        _tokenToEbookId[tokenId] = _ebookId; // 建立 NFT Token ID 到电子书 ID 的映射
+        emit EbookMinted(tokenId, _recipient, _uri); // 触发电子书铸造事件
+        _nextTokenId++; // 递增 Token ID，为下一个 NFT 准备
+    }
+&nbsp;
+    /**
+     * @dev 获取指定 Token ID 的元数据 URI
+     * @param _tokenId 要查询的 Token ID
+     */
+    function tokenURI(uint256 _tokenId) public view override returns (string memory) {
+        if (!_exists(_tokenId)) revert URIQueryForNonexistentToken();
+        return _tokenURIs[_tokenId];
+    }
+&nbsp;
+    /**
+     * @dev 检查 token 是否存在
+     * @param tokenId 要检查的 Token ID
+     * @return 如果 token 存在则返回 true
+     */
+    function _exists(uint256 tokenId) internal view returns (bool) {
+        return _ownerOf(tokenId) != address(0);
+    }
+&nbsp;
+    /**
+     * @dev 检查某个地址是否持有特定 Token ID 的 NFT
+     * @param _owner 要检查的地址
+     * @param _tokenId 要检查的 Token ID
+     * @return 如果 _owner 是 _tokenId 的所有者，则返回 true
+     */
+    function hasEbookNFT(address _owner, uint256 _tokenId) public view returns (bool) {
+        // 先检查 token 是否存在
+        if (!_exists(_tokenId)) {
+            return false;
+        }
+        // 检查指定地址是否是 token 的所有者
+        return ownerOf(_tokenId) == _owner;
+    }
+&nbsp;
+    /**
+     * @dev 检查某个地址是否拥有特定电子书ID的NFT
+     * @param _owner 要检查的地址
+     * @param _ebookId 电子书 ID
+     * @return 如果 _owner 拥有该电子书的任何 NFT，则返回 true
+     */
+    function hasEbookNFTByEbookId(address _owner, uint256 _ebookId) public view returns (bool) {
+        uint256 balance = balanceOf(_owner);
+        for (uint256 i = 0; i &lt; balance; i++) {
+            uint256 tokenId = tokenOfOwnerByIndex(_owner, i);
+            if (_tokenToEbookId[tokenId] == _ebookId) {
+                return true;
+            }
+        }
+        return false;
+    }
+&nbsp;
+    // --- ERC721EnumerableUpgradeable 覆盖函数 ---
+&nbsp;
+    /**
+     * @dev 内部函数，用于在 NFT 传输时更新所有者余额和令牌索引
+     * 必须覆盖，因为 ERC721EnumerableUpgradeable 实现了自己的逻辑
+     */
+    function _update(address to, uint256 tokenId, address auth)
+        internal
+        virtual
+        override(ERC721Upgradeable, ERC721EnumerableUpgradeable)
+        returns (address)
+    {
+        return super._update(to, tokenId, auth);
+    }
+&nbsp;
+    /**
+     * @dev 内部函数，用于增加账户的 ERC721 余额
+     * 必须覆盖，因为 ERC721EnumerableUpgradeable 实现了自己的逻辑
+     */
+<span class="fstat-no" title="function not covered" >    function _increaseBalance(address account, uint128 value)</span>
+        internal
+        virtual
+        override(ERC721Upgradeable, ERC721EnumerableUpgradeable)
+    {
+<span class="cstat-no" title="statement not covered" >        super._increaseBalance(account, value)</span>;
+    }
+&nbsp;
+    /**
+     * @dev 检查合约是否支持给定的接口
+     * 必须覆盖，以确保所有继承的接口都被正确报告
+     */
+    function supportsInterface(bytes4 interfaceId)
+        public
+        view
+        override(ERC721Upgradeable, ERC721EnumerableUpgradeable)
+        returns (bool)
+    {
+        return super.supportsInterface(interfaceId);
+    }
+&nbsp;
+    // --- UUPSUpgradeable 授权函数 ---
+    /**
+     * @dev 内部函数，用于授权合约升级。
+     * 根据 UUPS 标准，只有合约所有者可以触发升级。
+     * @param newImplementation 新的实现合约地址
+     */
+    function _authorizeUpgrade(address newImplementation) internal override onlyOwner {}
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jun 14 2025 21:24:25 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IEbookSalesDistributor",
+  "sourceName": "contracts/EbookRevenueDistribution.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_ebookURI",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_price",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_authorShareBPS",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_referrerShareBPS",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_uploadFee",
+          "type": "uint256"
+        }
+      ],
+      "name": "defineEbookForSale",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_ebookId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getEbookAuthor",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_ebookId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getEbookAuthorShareBPS",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_ebookId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getEbookReferrerShareBPS",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

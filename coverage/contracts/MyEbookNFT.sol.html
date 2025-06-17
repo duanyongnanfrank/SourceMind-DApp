@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/MyEbookNFT.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> MyEbookNFT.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/3</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/5</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20; // 确保 Solidity 版本与你的 hardhat.config.js 保持一致
+&nbsp;
+// 导入 OpenZeppelin 的 ERC721 标准合约
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+// 导入 OpenZeppelin 的 Ownable 合约，用于管理合约所有权
+import "@openzeppelin/contracts/access/Ownable.sol";
+// 导入 ERC721URIStorage，用于存储每个 NFT 的元数据 URI
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+&nbsp;
+// MyEbookNFT 合约继承了 ERC721URIStorage 和 Ownable
+contract MyEbookNFT is ERC721URIStorage, Ownable {
+    // 声明一个私有的状态变量来跟踪下一个可用的 tokenId
+    // 它会自动初始化为 0
+    uint256 private _nextTokenId;
+&nbsp;
+    // 构造函数：当合约部署时执行
+    // 传入 NFT 的名称和符号
+    // msg.sender 是部署合约的地址，Ownable 将其设为合约所有者
+<span class="fstat-no" title="function not covered" >    constructor(string memory _name, string memory _symbol)</span>
+        ERC721(_name, _symbol) // 调用 ERC721 的构造函数
+        Ownable(msg.sender)   // 调用 Ownable 的构造函数
+    {}
+&nbsp;
+    // 用于铸造（创建）新的电子书 NFT 的函数
+    // public: 任何人都可以调用
+    // onlyOwner: 只有合约所有者（部署者）可以调用此函数 (通过 Ownable 继承)
+<span class="fstat-no" title="function not covered" >    function safeMint(address to, string memory uri) public onlyOwner {</span>
+        // 获取当前的下一个可用的 tokenId，并将其存储在一个局部变量中
+<span class="cstat-no" title="statement not covered" >        uint256 tokenId = _nextTokenId;</span>
+        // 递增 _nextTokenId，为下一个 NFT 做准备
+        _nextTokenId++;
+&nbsp;
+        // 调用 ERC721 内部的铸造函数，将 NFT 铸造给 'to' 地址，并指定 tokenId
+<span class="cstat-no" title="statement not covered" >        _safeMint(to, tokenId)</span>;
+        // 设置该 NFT 的元数据 URI（指向 IPFS 上的电子书信息）
+<span class="cstat-no" title="statement not covered" >        _setTokenURI(tokenId, uri)</span>;
+    }
+&nbsp;
+    // 可以添加一个函数来获取下一个 tokenId，方便前端显示
+<span class="fstat-no" title="function not covered" >    function getNextTokenId() public view returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        return _nextTokenId;</span>
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat May 31 2025 16:19:58 GMT+0800 (中国标准时间)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
